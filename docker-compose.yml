@@ -1,0 +1,33 @@
+---
+version: "3.7"
+services:
+    nginx:
+        image: nginx:0.0.6
+        container_name: api-nginx-image
+        build:
+            context: .
+            dockerfile: Dockerfile-nginx
+#        command: nginx -c /usr/app/nginx/nginx.docker.conf -g "daemon off;"
+        ports:
+            - 9001:9191
+        restart: on-failure
+        volumes:
+            - /home/storage/dist:/usr/app/dist
+            - /home/storage/article-cache:/usr/app/article-cache
+            - /home/storage/static-file:/usr/app/static-file
+            - /home/storage/nginx-images-cache:/usr/app/nginx/nginx-images-cache
+    api-server:
+        image: api-server-image:0.0.6
+        container_name: api-server-image
+        build:
+            context: .
+            dockerfile: Dockerfile-api-server
+#        command: npm run back:start
+        ports:
+            - 3001:3000
+        restart: on-failure
+        volumes:
+            - /home/storage/dist:/usr/app/dist_static
+            - /home/storage/article-cache:/usr/app/article-cache
+            - /home/storage/static-file:/usr/app/static-file
+            - /home/storage/db:/usr/app/db

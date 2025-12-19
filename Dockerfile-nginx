@@ -1,0 +1,11 @@
+FROM ubuntu:20.04
+WORKDIR /usr/app/
+
+RUN apt update \
+&& apt install -y --no-install-recommends nginx \
+&& rm -rf /var/lib/apt/lists/*
+
+COPY ./nginx ./nginx
+
+ENTRYPOINT ["nginx"]
+CMD ["-c", "/usr/app/nginx/nginx.docker.conf", "-g", "daemon off;"]

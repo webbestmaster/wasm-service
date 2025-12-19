@@ -1,0 +1,15 @@
+---
+# example
+apiVersion: v1
+kind: Pod
+metadata:
+    name: my-site
+    namespace: default
+spec:
+    containers:
+        - name: just-my-site
+          image: my-image:0.0.5
+          command: ['./docker-start.sh']
+          ports:
+              - containerPort: 9191
+          imagePullPolicy: Never

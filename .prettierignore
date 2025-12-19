@@ -1,0 +1,24 @@
+#IDE
+/.idea/
+/.vscode/
+
+# Logs
+logs
+
+# npm
+/node_modules/
+
+# dist
+/dist/
+/dist-server/
+
+# report
+/coverage-ts/
+/tsc-check/
+/coverage/
+
+# static site
+/static-site/
+
+# storybook
+/storybook-static/
