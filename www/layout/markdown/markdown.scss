@@ -1,0 +1,22 @@
+.markdown {
+    background-color: transparent;
+
+    .markdown_picture {
+        display: block;
+        margin: 0 0 0.5em;
+    }
+
+    .markdown_image {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .markdown_audio {
+        margin: 0 auto 0.5em;
+    }
+
+    .markdown_video {
+        margin: 0 auto 0.5em;
+    }
+}

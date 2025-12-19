@@ -1,0 +1,34 @@
+@use '../../css/service';
+@use '../../css/variable';
+
+.footer {
+    @extend %width-limit;
+
+    align-items: center;
+    background-image: variable.$main-background-color;
+    border-top: 1px solid variable.$main-font-color;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: 0 variable.$ui-unit * 2;
+    justify-content: flex-start;
+    padding-bottom: variable.$ui-unit;
+    padding-top: variable.$ui-unit;
+
+    .footer_copyright,
+    .footer_link {
+        color: variable.$main-font-color;
+        display: block;
+        font-size: 0.875em;
+        padding: variable.$ui-unit 0;
+    }
+
+    .footer_link {
+        @extend %link;
+    }
+
+    .footer_copyright {
+        margin: 0;
+        text-decoration: none;
+    }
+}

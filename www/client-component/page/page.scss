@@ -1,0 +1,28 @@
+/* stylelint-disable media-feature-name-no-unknown */
+
+@use '../../css/variable';
+@use '../../css/service';
+
+.page {
+    background-color: #afafaf;
+    color: variable.$main-font-color;
+    font-family: variable.$main-font-family;
+    height: 100%;
+    line-height: 1.4;
+    margin: 0;
+    width: 100%;
+}
+
+.page_children {
+    @extend %width-limit;
+
+    min-height: calc(100vh - 157px);
+    padding-bottom: variable.$ui-unit * 2;
+    padding-top: variable.$ui-unit * 2;
+}
+
+@media screen and (width <= variable.$tablet-width) {
+    .page_children {
+        min-height: calc(100vh - 103px);
+    }
+}

@@ -1,0 +1,32 @@
+/* stylelint-disable media-feature-name-no-unknown */
+
+@use '../../css/variable';
+
+.article_preview_list {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    gap: variable.$ui-unit * 2;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 variable.$ui-unit * 3;
+}
+
+.article_preview_list_item {
+    display: block;
+    width: calc((100% - 3 * variable.$ui-unit * 2) / 4);
+}
+
+@media screen and (width <= variable.$desktop-width) {
+    .article_preview_list_item {
+        width: calc((100% - 2 * variable.$ui-unit * 2) / 3);
+    }
+}
+
+@media screen and (width <= variable.$tablet-width) {
+    .article_preview_list_item {
+        width: calc((100% - variable.$ui-unit * 2) / 2);
+    }
+}

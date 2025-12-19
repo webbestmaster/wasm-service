@@ -1,0 +1,97 @@
+@use '../../css/variable';
+
+.search_wrapper {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.search_input {
+    background-color: #f0f0f0;
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: auto 65%;
+    border: 1px solid #444;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+    line-height: 1.4;
+    padding: 7px 40px 5px 10px;
+    position: relative;
+    text-overflow: ellipsis;
+    width: 100%;
+    z-index: 0;
+}
+
+.search_icon {
+    background-color: transparent;
+    border: 0;
+    display: block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    z-index: 1;
+
+    &:before,
+    &:after {
+        content: '';
+        left: 50%;
+        position: absolute;
+        top: 50%;
+    }
+
+    &:before {
+        border: 2px solid variable.$main-font-color;
+        border-radius: 100%;
+        height: 9px;
+        margin: -9px 0 0 -11px;
+        width: 9px;
+    }
+
+    &:after {
+        background-color: variable.$main-font-color;
+        border-radius: 1px;
+        display: block;
+        height: 2px;
+        margin: 3.5px 0 0 -2.5px;
+        transform: rotate(45deg);
+        width: 9px;
+    }
+
+    &.search_icon__focused {
+        cursor: pointer;
+        pointer-events: auto;
+
+        &:before,
+        &:after {
+            background-color: variable.$main-font-color;
+            border: 0;
+            border-radius: 1px;
+            height: 2px;
+            margin-left: -9px;
+            margin-top: -1px;
+            width: 18px;
+        }
+
+        &:before {
+            transform: rotate(-45deg);
+        }
+
+        &:after {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.result_wrapper {
+    position: absolute;
+    top: 36px;
+    width: 100%;
+}

@@ -1,0 +1,7 @@
+@use '../../../css/effect';
+
+.page_404_header {
+    @extend %glitch;
+
+    color: #666;
+}

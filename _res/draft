@@ -1,0 +1,45 @@
+    return graphql({
+        contextValue: {context: 2},
+        rootValue: {
+            root: 'value',
+        },
+        variableValues: {
+            lim: 3,
+            cou: 1,
+        },
+        schema: articleListSchema,
+        source: `
+query MyQuery($lim: Int, $cou: Int) {
+  list(limit: $lim) {
+    articleType
+    title
+    id
+    slug
+    fileList(count: $cou) {
+        name
+        size
+        duration
+    }
+  }
+}
+`,
+
+
+
+var dice = 3
+var sides = 6
+var query = `query RollDice($dice: Int!, $sides: Int) {
+  rollDice(numDice: $dice, numSides: $sides)
+}`
+
+fetch("/graphql", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+  body: JSON.stringify({
+    query,
+    variables: { dice, sides },
+  }),
+})

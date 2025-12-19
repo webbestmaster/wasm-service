@@ -1,0 +1,50 @@
+{
+    "id": "responsiveDemoPage",
+    "viewports": [
+        {
+            "label": "phone",
+            "width": 320,
+            "height": 480
+        },
+        {
+            "label": "tablet",
+            "width": 1024,
+            "height": 768
+        }
+    ],
+    "scenarios": [
+        {
+            "label": "comparePage",
+            "url": "http://127.0.0.1:3000/",
+            "delay": 1000,
+            "hideSelectors": [],
+            "removeSelectors": [],
+            "selectors": [
+                "body",
+                "div.js-app-wrapper"
+            ],
+            "misMatchThreshold": 0.1,
+            "requireSameDimensions": true
+        }
+    ],
+    "engine": "puppeteer",
+    "engineOptions": {
+        "args": [
+            "--no-sandbox"
+        ]
+    },
+    "asyncCaptureLimit": 5,
+    "asyncCompareLimit": 50,
+    "debugWindow": false,
+    "paths": {
+        "bitmaps_reference": "test-backstop/bitmap/reference",
+        "bitmaps_test": "test-backstop/bitmap/test",
+        "html_report": "test-backstop/report/html",
+        "ci_report": "test-backstop/report/ci",
+        "casper_scripts": "test-backstop/engine-scripts"
+    },
+    "report": [
+        "browser"
+    ],
+    "debug": false
+}

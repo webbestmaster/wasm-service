@@ -1,0 +1,63 @@
+@use '../../css/variable';
+
+$scroll-to-top-button-size: 44px;
+
+.scroll_restoration__scroll_to_top_button {
+    background-color: rgb(0 0 0 / 50%);
+    border: 0;
+    border-radius: 4px;
+    bottom: 10px;
+    cursor: pointer;
+    height: $scroll-to-top-button-size;
+    outline: none;
+    position: fixed;
+    right: 0;
+    transform: translate3d($scroll-to-top-button-size, 0, 0);
+    transition: ease-out transform 0.2s;
+    width: $scroll-to-top-button-size;
+    z-index: 1;
+
+    &.scroll_restoration__scroll_to_top_button__visible {
+        transform: translate3d(-10px, 0, 0);
+    }
+}
+
+@media print {
+    .scroll_restoration__scroll_to_top_button {
+        display: none;
+    }
+}
+
+.scroll_restoration__scroll_to_top_button__arrow {
+    background-color: #fff;
+    border-radius: 2px;
+    height: 22px;
+    left: 50%;
+    margin-left: -2px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    width: 4px;
+
+    &:after,
+    &:before {
+        background-color: #fff;
+        border-radius: 2px;
+        content: '';
+        display: block;
+        height: 13px;
+        left: 0;
+        position: absolute;
+        top: 2px;
+        transform-origin: top center;
+        width: 4px;
+    }
+
+    &:after {
+        transform: rotateZ(40deg);
+    }
+
+    &:before {
+        transform: rotateZ(-40deg);
+    }
+}

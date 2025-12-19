@@ -1,0 +1,123 @@
+/* stylelint-disable media-feature-name-no-unknown */
+
+@use 'variable';
+
+%width-limit,
+.width_limit {
+    background-color: variable.$main-background-color;
+    box-sizing: border-box;
+    display: block;
+    font-family: variable.$main-font-family;
+    margin: 0 auto;
+    max-width: variable.$max-width;
+    padding-left: variable.$width-limiter-desktop-side-padding;
+    padding-right: variable.$width-limiter-desktop-side-padding;
+}
+
+%ellipsis,
+.ellipsis {
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*
+:global .mobile {
+    :local {
+        %width-limit,
+        .width_limit {
+            padding-left: $ui-unit * 2;
+            padding-right: $ui-unit * 2;
+        }
+    }
+}
+*/
+
+/*
+.width_limiter {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 990px;
+    padding: 0;
+}
+*/
+
+.main_font_color {
+    color: variable.$main-font-color;
+}
+
+.secondary_font_color {
+    color: variable.$secondary-font-color;
+}
+
+%link,
+.link {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+%scrolling-performance-issue {
+    transform: translate3d(0, 0, 0);
+}
+
+%scrollable,
+.scrollable {
+    @extend %scrolling-performance-issue;
+
+    --scrollbar-color: #f1f1f1;
+    --scrollbar-thumb-color: #c1c1c1;
+
+    display: block;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--thumb-color) var(--scrollbar-color);
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        background-color: var(--scrollbar-color);
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb-color);
+        border-radius: 2px;
+    }
+}
+
+.disable_user_event {
+    pointer-events: none;
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+@media screen and (width <= variable.$tablet-width) {
+    %width-limit,
+    .width_limit {
+        padding-left: variable.$width-limiter-tablet-side-padding;
+        padding-right: variable.$width-limiter-tablet-side-padding;
+    }
+}
+
+@media screen and (width <= variable.$phone-width) {
+    %width-limit,
+    .width_limit {
+        padding-left: variable.$width-limiter-phone-side-padding;
+        padding-right: variable.$width-limiter-phone-side-padding;
+    }
+}

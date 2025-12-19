@@ -1,0 +1,50 @@
+/* stylelint-disable keyframes-name-pattern, function-no-unknown, property-no-deprecated */
+
+@use 'sass:math';
+
+$glitch-step-count: 20;
+
+%glitch,
+.glitch {
+    font-family: sans-serif;
+    font-size: 80px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    transform: scale3d(1, 1, 1);
+
+    &:before,
+    &:after {
+        clip: rect(0, 900px, 0, 0);
+        color: inherit;
+        content: attr(data-text);
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &:before {
+        animation: glitch-effect-animation 3s infinite linear alternate-reverse;
+        left: 7px;
+        text-shadow: 1px 0 #080;
+    }
+
+    &:after {
+        animation: glitch-effect-animation 2s infinite linear alternate-reverse;
+        left: 3px;
+        text-shadow: -1px 0 #00c;
+    }
+}
+
+@keyframes glitch-effect-animation {
+    @for $i from 0 through $glitch-step-count {
+        #{math.percentage($i * (math.div(1, $glitch-step-count)))} {
+            clip: rect(math.random(100) + px, 9999px, math.random(100) + px, 0);
+        }
+    }
+}

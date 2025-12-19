@@ -1,0 +1,16 @@
+@use '../../../../css/variable';
+@use '../../../../css/service';
+
+.search_result_link {
+    @extend %link;
+
+    display: block;
+    font-size: 1em;
+    line-height: 1.4;
+    padding-bottom: variable.$ui-unit;
+    padding-top: variable.$ui-unit;
+}
+
+.search_result_link__highlight_text {
+    font-weight: bold;
+}

@@ -1,0 +1,64 @@
+@use '../../../css/service';
+
+$article-preview-border-radius: 6px;
+
+.article_preview__header_image {
+    @extend %link;
+
+    align-items: center;
+    border-radius: $article-preview-border-radius;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 162px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+
+.article_preview__header_image__title {
+    background-color: rgb(0 0 0 / 50%);
+    border-radius: 0 0 $article-preview-border-radius $article-preview-border-radius;
+    bottom: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 1em;
+    left: 0;
+    margin: 0;
+    padding: 8px;
+    position: absolute;
+    text-align: center;
+    text-decoration: inherit;
+    width: 100%;
+    z-index: 3;
+}
+
+.article_preview__header_image__back_image {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.article_preview___header_image_image {
+    background-color: rgb(255 2555 255 / 60%);
+    display: block;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+.article_preview__header {
+    @extend %link;
+
+    display: block;
+    font-size: 1em;
+    line-height: 1.4;
+}

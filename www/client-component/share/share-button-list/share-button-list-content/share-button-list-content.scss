@@ -1,0 +1,27 @@
+.share_button_list__wrapper {
+    box-sizing: border-box;
+    display: block;
+    padding-bottom: 16px;
+}
+
+@media print {
+    .share_button_list__wrapper {
+        display: none;
+    }
+}
+
+.share_button_list {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+.share_button_list__title {
+    display: block;
+    font-size: 1.125em;
+    font-style: normal;
+    margin: 0;
+    padding: 0 0 8px;
+}

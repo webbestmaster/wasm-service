@@ -1,0 +1,68 @@
+%share-button,
+.share_button {
+    align-items: center;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    transition: opacity linear 0.1s;
+    width: 44px;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.share_button__vkontakte {
+    @extend %share-button;
+
+    background-color: #4c6c91;
+}
+
+.share_button__facebook {
+    @extend %share-button;
+
+    background-color: #4267b2;
+}
+
+.share_button__telegram {
+    @extend %share-button;
+
+    background-color: #37aee2;
+}
+
+.share_button__odnoklassniki {
+    @extend %share-button;
+
+    background-color: #d7772d;
+}
+
+.share_button__viber {
+    @extend %share-button;
+
+    background-color: #7b519d;
+}
+
+.share_button__twitter {
+    @extend %share-button;
+
+    background-color: #55acee;
+}
+
+.share_button__whats_app {
+    @extend %share-button;
+
+    background-color: #2cb742;
+}
+
+.share_button__image {
+    display: block;
+    height: 24px;
+    width: 24px;
+}

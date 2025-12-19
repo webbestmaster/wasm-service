@@ -1,0 +1,17 @@
+/* stylelint-disable selector-pseudo-class-no-unknown */
+
+@use 'variable';
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    background-color: #fff;
+}

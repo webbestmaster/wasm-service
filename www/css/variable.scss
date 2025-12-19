@@ -1,0 +1,66 @@
+/* stylelint-disable selector-pseudo-class-no-unknown, property-no-unknown */
+$main-font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+$main-font-family-monospace: 'Lucida Console', 'Monaco', monospace;
+
+// colors
+$main-font-color: #1a1a1a;
+$main-font-color-opposite: #ececec;
+$secondary-font-color: #8d8d8d;
+$main-background-color: #f0f0f0;
+
+// link colors
+$main-link-color: #1c61e2;
+$main-link-color-visited: #821ce2;
+$main-link-color-active: #1ea3cb;
+
+// units and sizes
+$ui-unit: 8px;
+$max-width: 1200px;
+$desktop-width: 1024px;
+$tablet-width: 768px;
+$phone-width: 480px;
+$width-limiter-desktop-side-padding: $ui-unit * 3;
+$width-limiter-tablet-side-padding: $ui-unit * 2;
+$width-limiter-phone-side-padding: $ui-unit * 1.5;
+
+:export {
+    maxDesktopWidth: $desktop-width;
+    maxPhoneWidth: $phone-width;
+    maxTabletWidth: $tablet-width;
+    widthLimiterDesktopSidePadding: $width-limiter-desktop-side-padding;
+    widthLimiterPhoneSidePadding: $width-limiter-phone-side-padding;
+    widthLimiterTabletSidePadding: $width-limiter-tablet-side-padding;
+}
+
+// @media(hover: hover) -> hover is existing on device
+// @media(hover: none) -> hover is not existing on device
+
+/*
+// way number one of two
+@media(hover: hover) {
+    button:hover {
+        background-color: #0c0;
+    }
+}
+*/
+
+/*
+// way number two of two
+@media(hover: none) {
+    button:active {
+        background-color: #0c0;
+    }
+}
+*/
+
+/*
+// use hover for mouse only
+$mouse-device: '(hover: hover) and (pointer: fine)';
+button {
+    &:hover {
+        @media \#\{$mouse-device} {
+            background-color: #0c0;
+        }
+    }
+}
+*/

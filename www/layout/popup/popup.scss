@@ -1,0 +1,85 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.popup__fade {
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    backdrop-filter: blur(2px);
+    background-color: #aaa7;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    &.popup__fade__closed {
+        outline: 0;
+    }
+
+    &.popup__fade__opening {
+        animation-name: fade-in;
+    }
+
+    &.popup__fade__open {
+        outline: 0;
+    }
+
+    &.popup__fade__closing {
+        animation-direction: reverse;
+        animation-name: fade-in;
+    }
+}
+
+@keyframes content-in {
+    0% {
+        opacity: 0;
+        transform: translate3d(-50%, -200%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0);
+    }
+}
+
+.popup__container {
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 12px 4px #0007;
+    left: 50%;
+    max-height: 80vh;
+    max-width: 80vw;
+    position: fixed;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+
+    &.popup__container__closed {
+        outline: 0;
+    }
+
+    &.popup__container__opening {
+        animation-name: content-in;
+    }
+
+    &.popup__container__open {
+        outline: 0;
+    }
+
+    &.popup__container__closing {
+        animation-direction: reverse;
+        animation-name: content-in;
+    }
+}
